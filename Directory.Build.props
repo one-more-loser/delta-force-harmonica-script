@@ -1,0 +1,13 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>12</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <BuildRoot Condition="'$(BuildRoot)' == ''">$(MSBuildThisFileDirectory).build/</BuildRoot>
+    <BaseIntermediateOutputPath>$(BuildRoot)$(MSBuildProjectName)/obj/</BaseIntermediateOutputPath>
+    <BaseOutputPath>$(BuildRoot)$(MSBuildProjectName)/bin/</BaseOutputPath>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+</Project>

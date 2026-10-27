@@ -1,0 +1,29 @@
+name: Windows build and offline-safe tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: windows-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-dotnet@v6.0.0
+        with:
+          dotnet-version: '8.0.x'
+      - name: Build WPF application
+        shell: pwsh
+        run: ./Build.ps1 -Mode Build
+      - name: Core and parser regression tests
+        shell: pwsh
+        run: ./Build.ps1 -Mode Test
+      - name: Isolated desktop regression tests
+        shell: pwsh
+        run: ./Build.ps1 -Mode DesktopTest

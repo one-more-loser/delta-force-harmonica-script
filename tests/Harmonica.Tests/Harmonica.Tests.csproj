@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
+  <ItemGroup><ProjectReference Include="../../src/Harmonica.Core/Harmonica.Core.csproj" /><Compile Include="../../src/Harmonica.Desktop/NativeInput.cs" Link="NativeInput.cs" /></ItemGroup>
+</Project>

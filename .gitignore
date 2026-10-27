@@ -1,0 +1,22 @@
+# Local build products and SDKs
+.build/
+.tools/
+artifacts/
+**/bin/
+**/obj/
+.vs/
+*.user
+*.suo
+# Personal delivery, songs, settings, evidence and prior prompts
+local-notes/
+曲库/
+程序/
+程序备份*/
+发布/
+settings.json
+运行日志.txt*
+preview-*.wav
+*.dmp
+.env
+.env.*
+!.env.example
